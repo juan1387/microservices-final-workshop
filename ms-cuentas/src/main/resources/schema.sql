@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS cuenta (
+    id         BIGINT AUTO_INCREMENT PRIMARY KEY,
+    idbanco    BIGINT      NOT NULL,
+    nrocuenta  VARCHAR(30),
+    titular    VARCHAR(150) NOT NULL
+);
+
+
+CREATE SEQUENCE IF NOT EXISTS seq_nro_cuenta
+  START WITH 100000000000
+  INCREMENT BY 1;
+
+
+ALTER TABLE cuenta
+  ALTER COLUMN nrocuenta SET DEFAULT (CAST(NEXT VALUE FOR seq_nro_cuenta AS VARCHAR));

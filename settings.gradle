@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        //mavenCentral()
+        maven { url "https://artifactory.apps.bancolombia.com/maven-bancolombia" }
+    }
+}
+rootProject.name = 'ActividadCurso'
+include 'api-gateway'
+include 'ms-auth'
+include 'products-service'
+include 'ms-banco'
+include 'ms-cuentas'
+include 'ms-tranferencias'
+include 'ms-convertura'
+include 'ms-transacciones'
+
+
